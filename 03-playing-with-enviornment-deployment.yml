@@ -11,7 +11,7 @@ strategy:
       linux:
         operatingSystem: 'ubuntu-latest'
       mac:
-        operatiingSystem: 'macos-latest'
+        operatingSystem: 'macos-latest'
 
 pool:
   vmImage: $(operatingSystem)

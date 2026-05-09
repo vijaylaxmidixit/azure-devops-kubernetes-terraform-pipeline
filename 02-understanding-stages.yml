@@ -27,7 +27,7 @@ stages:
     - bash: node --version
     - bash: python --version
     - bash: mvn -version
-    - bash: ls -R echo $(Build.ArtifactStagingDirectory)
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
@@ -35,7 +35,7 @@ stages:
           **/*.yaml
           **/*.tf
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    - bash: ls -R echo $(Build.ArtifactStagingDirectory)
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
   - job: SecondJob
     steps:
     - bash: echo Build SecondJob
